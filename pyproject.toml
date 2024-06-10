@@ -2,15 +2,18 @@
 name = "seeder-flet"
 version = "0.1.0"
 description = ""
-authors = ["tokitouq <suneeth.since2005@gmail.com>"]
+authors = ["tokitouq <suneeth.since2005@gmail.com>","baseplate-admin <61817579+baseplate-admin@users.noreply.github.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
 flet = "^0.22.1"
 
+[tool.poetry.group.dev.dependencies]
+poethepoet = "^0.26.1"
+
 [tool.poe.tasks]
-dev = "seeder_flet.main:ft.app"
+dev = "python seeder_flet/main.py"
 
 
 [build-system]
