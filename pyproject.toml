@@ -13,7 +13,7 @@ flet = "^0.22.1"
 poethepoet = "^0.26.1"
 
 [tool.poe.tasks]
-dev = "python seeder_flet/main.py"
+dev = "flet run -d src/seeder_flet/main.py"
 
 
 [build-system]
