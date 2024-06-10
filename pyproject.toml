@@ -9,8 +9,8 @@ readme = "README.md"
 python = "^3.12"
 flet = "^0.22.1"
 
-[tool.poetry.scripts]
-dev = "seeder-flet.main:ft.app"
+[tool.poe.tasks]
+dev = "seeder_flet.main:ft.app"
 
 
 [build-system]
