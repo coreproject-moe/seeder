@@ -3,12 +3,14 @@ name = "seeder-flet"
 version = "0.1.0"
 description = ""
 authors = ["tokitouq <suneeth.since2005@gmail.com>"]
-license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
 flet = "^0.22.1"
+
+[tool.poetry.scripts]
+dev = "seeder-flet.main:ft.app"
 
 
 [build-system]
