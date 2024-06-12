@@ -3,33 +3,24 @@ import flet as ft
 
 def main(page: ft.Page):
     page.title = "Flet counter example"
-    page.vertical_alignment = ft.MainAxisAlignment.CENTER
 
-    txt_number = ft.TextField(value="0", text_align=ft.TextAlign.RIGHT, width=100)
-
-    def minus_click(e):
-        if not txt_number.value:
-            return
-        txt_number.value = str(int(txt_number.value) - 1)
-        page.update()
-
-    def plus_click(e):
-        if not txt_number.value:
-            return
-        txt_number.value = str(int(txt_number.value) + 1)
-        page.update()
-
-    page.add(
-        ft.Row(
-            [
-                ft.IconButton(ft.icons.REMOVE, on_click=minus_click),
-                txt_number,
-                ft.IconButton(ft.icons.ADD, on_click=plus_click),
-            ],
-            alignment=ft.MainAxisAlignment.CENTER,
+    page.fonts = {
+        "Kokoro": "fonts/Kokoro/Regular.ttf",
+        "Kokoro-Medium": "fonts/Kokoro/Medium.ttf",
+        "Kokoro-Bold": "fonts/Kokoro/Bold.ttf",
+    }
+    page.theme = ft.Theme(
+        font_family="Kokoro",
+        color_scheme=ft.ColorScheme(
+            secondary="#03020c"
         )
     )
 
+    page.add(ft.Text("coreproject", color=ft.colors.BLUE_100))
+    page.bgcolor = ft.colors.SECONDARY
+
+    page.update()
+
 
 if __name__ == "__main__":
-    ft.app(main)
+    ft.app(main, assets_dir="assets/")
