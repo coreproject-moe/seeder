@@ -1,5 +1,6 @@
 import flet as ft
 
+from lib.views.login import LoginView
 
 def main(page: ft.Page):
     page.title = "Flet counter example"
@@ -21,10 +22,7 @@ def main(page: ft.Page):
         page.views.append(
             ft.View(
                 "/",
-                [
-                    ft.Text("Login page", color=ft.colors.BLUE_100),
-                    ft.TextButton("Go to anime", on_click=lambda _: page.go("/home"))
-                ],
+                [LoginView(page)],
                 bgcolor=ft.colors.SECONDARY,
                 padding=0
             )
