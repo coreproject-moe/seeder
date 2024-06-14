@@ -1,6 +1,6 @@
 import flet as ft
 
-from seeder_flet.lib.views.login import LoginView
+from src.seeder_flet.lib.views.login import LoginView
 
 def main(page: ft.Page):
     page.title = "Flet counter example"
