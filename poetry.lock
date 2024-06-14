@@ -51,6 +51,25 @@ doc = ["doc8", "sphinx (>=7.0.0)", "sphinx-autobuild", "sphinx-autodoc-typehints
 test = ["dateparser (==1.*)", "pre-commit", "pytest", "pytest-cov", "pytest-mock", "pytz (==2021.1)", "simplejson (==3.*)"]
 
 [[package]]
+name = "attrs"
+version = "23.2.0"
+description = "Classes Without Boilerplate"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "attrs-23.2.0-py3-none-any.whl", hash = "sha256:99b87a485a5820b23b879f04c2305b44b951b502fd64be915879d77a7e8fc6f1"},
+    {file = "attrs-23.2.0.tar.gz", hash = "sha256:935dc3b529c262f6cf76e50877d35a4bd3c1de194fd41f47a2b7ae8f19971f30"},
+]
+
+[package.extras]
+cov = ["attrs[tests]", "coverage[toml] (>=5.3)"]
+dev = ["attrs[tests]", "pre-commit"]
+docs = ["furo", "myst-parser", "sphinx", "sphinx-notfound-page", "sphinxcontrib-towncrier", "towncrier", "zope-interface"]
+tests = ["attrs[tests-no-zope]", "zope-interface"]
+tests-mypy = ["mypy (>=1.6)", "pytest-mypy-plugins"]
+tests-no-zope = ["attrs[tests-mypy]", "cloudpickle", "hypothesis", "pympler", "pytest (>=4.3.0)", "pytest-xdist[psutil]"]
+
+[[package]]
 name = "binaryornot"
 version = "0.4.4"
 description = "Ultra-lightweight pure Python package to check if a file is binary or text."
@@ -63,6 +82,29 @@ files = [
 
 [package.dependencies]
 chardet = ">=3.0.2"
+
+[[package]]
+name = "cattrs"
+version = "23.2.3"
+description = "Composable complex class support for attrs and dataclasses."
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "cattrs-23.2.3-py3-none-any.whl", hash = "sha256:0341994d94971052e9ee70662542699a3162ea1e0c62f7ce1b4a57f563685108"},
+    {file = "cattrs-23.2.3.tar.gz", hash = "sha256:a934090d95abaa9e911dac357e3a8699e0b4b14f8529bcc7d2b1ad9d51672b9f"},
+]
+
+[package.dependencies]
+attrs = ">=23.1.0"
+
+[package.extras]
+bson = ["pymongo (>=4.4.0)"]
+cbor2 = ["cbor2 (>=5.4.6)"]
+msgpack = ["msgpack (>=1.0.5)"]
+orjson = ["orjson (>=3.9.2)"]
+pyyaml = ["pyyaml (>=6.0)"]
+tomlkit = ["tomlkit (>=0.11.8)"]
+ujson = ["ujson (>=5.7.0)"]
 
 [[package]]
 name = "certifi"
@@ -698,6 +740,22 @@ files = [
 ]
 
 [[package]]
+name = "platformdirs"
+version = "4.2.2"
+description = "A small Python package for determining appropriate platform-specific dirs, e.g. a `user data dir`."
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "platformdirs-4.2.2-py3-none-any.whl", hash = "sha256:2d7a1657e36a80ea911db832a8a6ece5ee53d8de21edd5cc5879af6530b1bfee"},
+    {file = "platformdirs-4.2.2.tar.gz", hash = "sha256:38b7b51f512eed9e84a22788b4bce1de17c0adb134d6becb09836e37d8654cd3"},
+]
+
+[package.extras]
+docs = ["furo (>=2023.9.10)", "proselint (>=0.13)", "sphinx (>=7.2.6)", "sphinx-autodoc-typehints (>=1.25.2)"]
+test = ["appdirs (==1.4.4)", "covdefaults (>=2.3)", "pytest (>=7.4.3)", "pytest-cov (>=4.1)", "pytest-mock (>=3.12)"]
+type = ["mypy (>=1.8)"]
+
+[[package]]
 name = "poethepoet"
 version = "0.26.1"
 description = "A task runner that works well with poetry."
@@ -849,6 +907,21 @@ files = [
     {file = "pypng-0.20220715.0-py3-none-any.whl", hash = "sha256:4a43e969b8f5aaafb2a415536c1a8ec7e341cd6a3f957fd5b5f32a4cfeed902c"},
     {file = "pypng-0.20220715.0.tar.gz", hash = "sha256:739c433ba96f078315de54c0db975aee537cbc3e1d0ae4ed9aab0ca1e427e2c1"},
 ]
+
+[[package]]
+name = "pyrate-limiter"
+version = "2.10.0"
+description = "Python Rate-Limiter using Leaky-Bucket Algorithm"
+optional = false
+python-versions = ">=3.7,<4.0"
+files = [
+    {file = "pyrate_limiter-2.10.0-py3-none-any.whl", hash = "sha256:a99e52159f5ed5eb58118bed8c645e30818e7c0e0d127a0585c8277c776b0f7f"},
+    {file = "pyrate_limiter-2.10.0.tar.gz", hash = "sha256:98cc52cdbe058458e945ae87d4fd5a73186497ffa545ee6e98372f8599a5bd34"},
+]
+
+[package.extras]
+all = ["filelock (>=3.0)", "redis (>=3.3,<4.0)", "redis-py-cluster (>=2.1.3,<3.0.0)"]
+docs = ["furo (>=2022.3.4,<2023.0.0)", "myst-parser (>=0.17)", "sphinx (>=4.3.0,<5.0.0)", "sphinx-autodoc-typehints (>=1.17,<2.0)", "sphinx-copybutton (>=0.5)", "sphinxcontrib-apidoc (>=0.3,<0.4)"]
 
 [[package]]
 name = "python-dateutil"
@@ -1028,6 +1101,54 @@ socks = ["PySocks (>=1.5.6,!=1.5.7)"]
 use-chardet-on-py3 = ["chardet (>=3.0.2,<6)"]
 
 [[package]]
+name = "requests-cache"
+version = "1.2.0"
+description = "A persistent cache for python requests"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "requests_cache-1.2.0-py3-none-any.whl", hash = "sha256:490324301bf0cb924ff4e6324bd2613453e7e1f847353928b08adb0fdfb7f722"},
+    {file = "requests_cache-1.2.0.tar.gz", hash = "sha256:db1c709ca343cc1cd5b6c8b1a5387298eceed02306a6040760db538c885e3838"},
+]
+
+[package.dependencies]
+attrs = ">=21.2"
+cattrs = ">=22.2"
+platformdirs = ">=2.5"
+requests = ">=2.22"
+url-normalize = ">=1.4"
+urllib3 = ">=1.25.5"
+
+[package.extras]
+all = ["boto3 (>=1.15)", "botocore (>=1.18)", "itsdangerous (>=2.0)", "pymongo (>=3)", "pyyaml (>=6.0.1)", "redis (>=3)", "ujson (>=5.4)"]
+bson = ["bson (>=0.5)"]
+docs = ["furo (>=2023.3,<2024.0)", "linkify-it-py (>=2.0,<3.0)", "myst-parser (>=1.0,<2.0)", "sphinx (>=5.0.2,<6.0.0)", "sphinx-autodoc-typehints (>=1.19)", "sphinx-automodapi (>=0.14)", "sphinx-copybutton (>=0.5)", "sphinx-design (>=0.2)", "sphinx-notfound-page (>=0.8)", "sphinxcontrib-apidoc (>=0.3)", "sphinxext-opengraph (>=0.9)"]
+dynamodb = ["boto3 (>=1.15)", "botocore (>=1.18)"]
+json = ["ujson (>=5.4)"]
+mongodb = ["pymongo (>=3)"]
+redis = ["redis (>=3)"]
+security = ["itsdangerous (>=2.0)"]
+yaml = ["pyyaml (>=6.0.1)"]
+
+[[package]]
+name = "requests-ratelimiter"
+version = "0.6.0"
+description = "Rate-limiting for the requests library"
+optional = false
+python-versions = ">=3.7,<4.0"
+files = [
+    {file = "requests_ratelimiter-0.6.0-py3-none-any.whl", hash = "sha256:0641ec7b3dd919a64a8e390358d416c7369f89eb61bec0cf6113ea8d2ec4f072"},
+    {file = "requests_ratelimiter-0.6.0.tar.gz", hash = "sha256:ad72f033323df3c1012a3ac4bb91be36606741f58ec9faede62b89b475ea99f6"},
+]
+
+[package.dependencies]
+pyrate-limiter = "<3.0"
+requests = ">=2.20"
+
+[package.extras]
+docs = ["furo (>=2023.3,<2024.0)", "myst-parser (>=1.0)", "sphinx (>=5.2,<6.0)", "sphinx-autodoc-typehints (>=1.22,<2.0)", "sphinx-copybutton (>=0.5)"]
+
+[[package]]
 name = "rich"
 version = "13.7.1"
 description = "Render rich text, tables, progress bars, syntax highlighting, markdown and more to the terminal"
@@ -1044,6 +1165,74 @@ pygments = ">=2.13.0,<3.0.0"
 
 [package.extras]
 jupyter = ["ipywidgets (>=7.5.1,<9)"]
+
+[[package]]
+name = "selectolax"
+version = "0.3.21"
+description = "Fast HTML5 parser with CSS selectors."
+optional = false
+python-versions = "*"
+files = [
+    {file = "selectolax-0.3.21-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:7be91179992b9f2da6bca64b9e853b0a89582c6ea8c8efa89be956409c2df03c"},
+    {file = "selectolax-0.3.21-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:635714e93669b04c96fefa97ce6dbd4bd1a64970854e6be857a43b1a7826039a"},
+    {file = "selectolax-0.3.21-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:652fc8fc0432979fa5d17de715ea9183bef5255875868fb4e273c999c57c82dc"},
+    {file = "selectolax-0.3.21-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:00160ecbc94604ef98e162627a56ea0fd76940580dbe291371a618dd3fe0fff4"},
+    {file = "selectolax-0.3.21-cp310-cp310-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:8dbbd5c3a6070665d5956fd49fe1c4b6008179a3ce6e5dcf7c22276697b9674c"},
+    {file = "selectolax-0.3.21-cp310-cp310-musllinux_1_1_aarch64.whl", hash = "sha256:e6de18a9dfbbc623fd5089666e60b3468d803d70aa594c5bee00d70a5c33cada"},
+    {file = "selectolax-0.3.21-cp310-cp310-musllinux_1_1_i686.whl", hash = "sha256:a41ce2b035c7fed60dd54dedcc4c153fdc82970f873bed02966b9abf8559aa67"},
+    {file = "selectolax-0.3.21-cp310-cp310-musllinux_1_1_x86_64.whl", hash = "sha256:b817137ca58dccc4770d1df41fd674c1061c0f810ca46c8afda5c3146590a6b3"},
+    {file = "selectolax-0.3.21-cp310-cp310-win32.whl", hash = "sha256:0809bcecadea894e0c77654ac814bc92d58cbbc4c93892408fe49d078a312974"},
+    {file = "selectolax-0.3.21-cp310-cp310-win_amd64.whl", hash = "sha256:2c0687054a9d8408c6cb748839471235b62df07bd9a6d8ebca576337218300c6"},
+    {file = "selectolax-0.3.21-cp311-cp311-macosx_10_9_universal2.whl", hash = "sha256:5d28c82c601f1b28b1f3d7bd7f75c319682d777c11f2a49520edf6361dbe6d89"},
+    {file = "selectolax-0.3.21-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:5c52cd8a6048a0837694c59ed5a6c33f9e48312a8f7f4db99c09c2a890a59466"},
+    {file = "selectolax-0.3.21-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:712eaeec13136d6d0a0fce8494b538838d6a424c5a1c8fc865b524b3b8d17d33"},
+    {file = "selectolax-0.3.21-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:cce7dead273370c572797b36bdf55c8a57f3232334555864f3e8c5c2bcfae8e0"},
+    {file = "selectolax-0.3.21-cp311-cp311-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:58ed7fba0fd763f7505200fa0b26d896c0dbef2eabdd0a240f0c4abbaf583925"},
+    {file = "selectolax-0.3.21-cp311-cp311-musllinux_1_1_aarch64.whl", hash = "sha256:09feb7b9bea4855ead57f4954fe4f2515d4e7c04e38eb58f4be494188b7467a1"},
+    {file = "selectolax-0.3.21-cp311-cp311-musllinux_1_1_i686.whl", hash = "sha256:e2dbc29a1b990c75e143bc0ed1a2ac7c4f995584cedf9418af1284ed19978d75"},
+    {file = "selectolax-0.3.21-cp311-cp311-musllinux_1_1_x86_64.whl", hash = "sha256:d484f88e15c0ce0b00a98f347632de2b32a39acee7f519b86fe75cf0c2f7cf94"},
+    {file = "selectolax-0.3.21-cp311-cp311-win32.whl", hash = "sha256:420eeb44bb7391731472305a2100b7300a5afc815f245c1c786e977b4d721ee0"},
+    {file = "selectolax-0.3.21-cp311-cp311-win_amd64.whl", hash = "sha256:687fad57c17c04ef744f6689cc68d29fc4029b0dad8a7e26cdac4b81e8fafb74"},
+    {file = "selectolax-0.3.21-cp312-cp312-macosx_10_9_universal2.whl", hash = "sha256:f07fe837da86fcfe7223652c311f55f2062923ad9fbe12142cf8d948539a35a0"},
+    {file = "selectolax-0.3.21-cp312-cp312-macosx_10_9_x86_64.whl", hash = "sha256:2a3bdb30f63ac192058070190af887b05e15a0c45d082a86fdd38af96b65a6e0"},
+    {file = "selectolax-0.3.21-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:ec7950fde98c1731b1cb4e2e396cfc177cdfe98dbd9f8d04748a75f1dcaff5c5"},
+    {file = "selectolax-0.3.21-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:72e0dc806998f2108e65bbaf1f4a1d2a5079a9fc6c4ee848d3da2cbacef47d8c"},
+    {file = "selectolax-0.3.21-cp312-cp312-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:335bb8ffc6d49bf46f8299bdcb415b039674ebfe86ffd4826a132f810ae31e51"},
+    {file = "selectolax-0.3.21-cp312-cp312-musllinux_1_1_aarch64.whl", hash = "sha256:c5055b97b29e1357a836beab2799691660d5aa4d33805ce7a1e4fd73ecdfdff4"},
+    {file = "selectolax-0.3.21-cp312-cp312-musllinux_1_1_i686.whl", hash = "sha256:5a56ce8b48c9f6cadbaa7aaa2364bdc6eb90bff5acfda7a8b82c815d99598a7b"},
+    {file = "selectolax-0.3.21-cp312-cp312-musllinux_1_1_x86_64.whl", hash = "sha256:f7bc18ad43633377defc013589e386a30af8695828bbe2c7f711c8ee8a9ca812"},
+    {file = "selectolax-0.3.21-cp312-cp312-win32.whl", hash = "sha256:0561b8675fb562198d760bbf904d46e751172f8e5040d57121d65039a9acd21c"},
+    {file = "selectolax-0.3.21-cp312-cp312-win_amd64.whl", hash = "sha256:d38fc69f3c4b06f233e07adbca0e3d58aecc3cdb3d9a72436f64fc0c6d8fa30f"},
+    {file = "selectolax-0.3.21-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:79c203a4bdd7642f5b986a8ec121606f01d8a6496c7a2550621bec67a7470221"},
+    {file = "selectolax-0.3.21-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:f0d2fec2ee41b1d7cf146970b09ad04d0ddeaf9947bd55cd4504a38b7bc6322b"},
+    {file = "selectolax-0.3.21-cp37-cp37m-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:e642adf208b20b3887bfca8e249867b0441bdd238eda026e17c523d3fc30500b"},
+    {file = "selectolax-0.3.21-cp37-cp37m-musllinux_1_1_i686.whl", hash = "sha256:54efd47eaea31b89c955a93383f4eb6d975abdb445e6721f9a49ca2141f385b0"},
+    {file = "selectolax-0.3.21-cp37-cp37m-musllinux_1_1_x86_64.whl", hash = "sha256:462ac9bffcea5c34ab4d9f6720916deec3edbb45669ccd3257d930a330d55419"},
+    {file = "selectolax-0.3.21-cp37-cp37m-win32.whl", hash = "sha256:8b3700ca92b288442cd29cc499c9f0deff317c413dbb274ea08a8b4a02e0258f"},
+    {file = "selectolax-0.3.21-cp37-cp37m-win_amd64.whl", hash = "sha256:c60d2ec8285b242f799ec7de8b6d7dda987f05de2a5012f64fce0ce4fd645b3b"},
+    {file = "selectolax-0.3.21-cp38-cp38-macosx_10_9_universal2.whl", hash = "sha256:d1a4842818e5659cb753f2f1d49885497680e0904fdd3db4eb97771cc241ef2d"},
+    {file = "selectolax-0.3.21-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:9a38ce752404e399e45f5978b64a58fdea09e8b4647beea7c014b3602f7ed5f0"},
+    {file = "selectolax-0.3.21-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:5851c23585618ae7ff24ba4c8a718d0c5e027523b3c0f62e74047b9e385339aa"},
+    {file = "selectolax-0.3.21-cp38-cp38-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:1e3ec204cc3819a1fa8fdfde99cc1c65793d954bca9f6e4e7007267951c15b38"},
+    {file = "selectolax-0.3.21-cp38-cp38-musllinux_1_1_i686.whl", hash = "sha256:a3c6a39b00cf27dcb9e4644ef6e729cd43d9c20e928acecaa118045bcc9a166f"},
+    {file = "selectolax-0.3.21-cp38-cp38-musllinux_1_1_x86_64.whl", hash = "sha256:ca5ffd105762c61c6300562036f7d9d90dce007a32b4bd8ee2a33fb7399e0fdc"},
+    {file = "selectolax-0.3.21-cp38-cp38-win32.whl", hash = "sha256:a802e3b630cb55d92fe5aee8091e7b337fbe4f67872dde936912ffc9d149ee4a"},
+    {file = "selectolax-0.3.21-cp38-cp38-win_amd64.whl", hash = "sha256:636711ed17609b0f6c120ac147bdffd7960b57c14f52746ea8b3ceb549fa4622"},
+    {file = "selectolax-0.3.21-cp39-cp39-macosx_10_9_universal2.whl", hash = "sha256:7a04e9cf87f9bcdd6418e0462e8a190a5567c33989966257433da7cd8cc907c4"},
+    {file = "selectolax-0.3.21-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:ae41d1d5eaabf94548c64bee4652c16a7b66e41398522626f006d70522f1f5f2"},
+    {file = "selectolax-0.3.21-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:eeca4492ee12b4e873437531df3d858b6970f1dd8c0c2c88fa99281735e864a6"},
+    {file = "selectolax-0.3.21-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:57904e1b22b8257ea4d8bda090321cd23d4e00595a257bb74500bf42701b7120"},
+    {file = "selectolax-0.3.21-cp39-cp39-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:252881a79f354efb355db8dac1aa2022068b5faa5d6d0e8dd384bb79b2480e96"},
+    {file = "selectolax-0.3.21-cp39-cp39-musllinux_1_1_aarch64.whl", hash = "sha256:79f99c273f0f0d06763d786c9fc67a763e3176e85b60e3e2bddb9f6b53380771"},
+    {file = "selectolax-0.3.21-cp39-cp39-musllinux_1_1_i686.whl", hash = "sha256:55c52a40df576a355b6a7b580b779efe98cf8b603a23709c556e000eee0875f5"},
+    {file = "selectolax-0.3.21-cp39-cp39-musllinux_1_1_x86_64.whl", hash = "sha256:c3d309b7c47cbf53a6655ce74e0bffd076b67b990bd2941487f368584048d48c"},
+    {file = "selectolax-0.3.21-cp39-cp39-win32.whl", hash = "sha256:7f12f7c2091ce7ef302e4c70ace4273551bee3ccfeacf708e786eb6114e97104"},
+    {file = "selectolax-0.3.21-cp39-cp39-win_amd64.whl", hash = "sha256:b2cc8d49da1cf06c6052508d052e425a544dbbffd4ea137cc9ec522d3560c32d"},
+    {file = "selectolax-0.3.21.tar.gz", hash = "sha256:cdf532c0fbad04be1b94bcfbf373df1e1b09edfe9015c9a13fb00291bee8379e"},
+]
+
+[package.extras]
+cython = ["Cython (==0.29.36)"]
 
 [[package]]
 name = "shellingham"
@@ -1242,6 +1431,20 @@ files = [
     {file = "ujson-5.10.0-pp39-pypy39_pp73-win_amd64.whl", hash = "sha256:e1402f0564a97d2a52310ae10a64d25bcef94f8dd643fcf5d310219d915484f7"},
     {file = "ujson-5.10.0.tar.gz", hash = "sha256:b3cd8f3c5d8c7738257f1018880444f7b7d9b66232c64649f562d7ba86ad4bc1"},
 ]
+
+[[package]]
+name = "url-normalize"
+version = "1.4.3"
+description = "URL normalization for Python"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*"
+files = [
+    {file = "url-normalize-1.4.3.tar.gz", hash = "sha256:d23d3a070ac52a67b83a1c59a0e68f8608d1cd538783b401bc9de2c0fac999b2"},
+    {file = "url_normalize-1.4.3-py2.py3-none-any.whl", hash = "sha256:ec3c301f04e5bb676d333a7fa162fa977ad2ca04b7e652bfc9fac4e405728eed"},
+]
+
+[package.dependencies]
+six = "*"
 
 [[package]]
 name = "urllib3"
@@ -1544,4 +1747,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "54fb057364fbc384a3e03c4c7cc363a4d81ecb671aa1068f3d2b7c2ce9aca879"
+content-hash = "ba4960d0013653a55e8caa5c5bc5ffb04db8a3d43de607bb42748870df717008"
