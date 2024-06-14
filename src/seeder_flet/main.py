@@ -1,6 +1,6 @@
 import flet as ft
 
-from lib.views.login import LoginView
+from seeder_flet.lib.views.login import LoginView
 
 def main(page: ft.Page):
     page.title = "Flet counter example"
@@ -10,10 +10,13 @@ def main(page: ft.Page):
         "Kokoro-Medium": "fonts/Kokoro/Medium.ttf",
         "Kokoro-Bold": "fonts/Kokoro/Bold.ttf",
     }
+    page.theme_mode = ft.ThemeMode.DARK
     page.theme = ft.Theme(
         font_family="Kokoro",
         color_scheme=ft.ColorScheme(
-            secondary="#03020c"
+            secondary="#03020c",
+            tertiary="#1E2036",
+            primary="#7569E1",
         )
     )
 
