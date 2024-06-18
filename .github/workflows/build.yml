@@ -40,6 +40,6 @@ jobs:
               with:
                   flutter-version: '3.22.2'
 
-            - name: Flet Build Web
+            - name: Flet Build Linux
               run: |
                   poetry run flet build linux ./src/seeder_flet
