@@ -1,5 +1,11 @@
 import flet as ft
 
+__all__ = ["login_view"]
+
+
+def handle_login_click():
+    pass
+
 
 def login_view(page: ft.Page):
     return ft.Row(
@@ -47,6 +53,7 @@ def login_view(page: ft.Page):
                             color={ft.MaterialState.DEFAULT: ft.colors.BLUE_100},
                             bgcolor=ft.colors.TERTIARY,
                         ),
+                        on_click=handle_login_click(),
                         height=40,
                         width=200,
                     ),
