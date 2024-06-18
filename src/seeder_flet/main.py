@@ -1,6 +1,7 @@
 import flet as ft
 
-from src.seeder_flet.lib.views.login import LoginView
+from seeder_flet.lib.views.login import LoginView
+
 
 def main(page: ft.Page):
     page.title = "Flet counter example"
@@ -17,18 +18,13 @@ def main(page: ft.Page):
             secondary="#03020c",
             tertiary="#1E2036",
             primary="#7569E1",
-        )
+        ),
     )
 
     def route_change(event: ft.RouteChangeEvent):
         page.views.clear()
         page.views.append(
-            ft.View(
-                "/",
-                [LoginView(page)],
-                bgcolor=ft.colors.SECONDARY,
-                padding=0
-            )
+            ft.View("/", [LoginView(page)], bgcolor=ft.colors.SECONDARY, padding=0)
         )
         if event.route == "/home":
             page.views.append(
@@ -36,10 +32,10 @@ def main(page: ft.Page):
                     "/",
                     [
                         ft.Text("Home", color=ft.colors.BLUE_100),
-                        ft.TextButton("Login", on_click=lambda _: page.go("/"))
+                        ft.TextButton("Login", on_click=lambda _: page.go("/")),
                     ],
                     bgcolor=ft.colors.SECONDARY,
-                    padding=0
+                    padding=0,
                 )
             )
 
@@ -53,6 +49,7 @@ def main(page: ft.Page):
     page.on_route_change = route_change
     page.on_view_pop = view_pop
     page.go(page.route)
+
 
 if __name__ == "__main__":
     ft.app(main, assets_dir="assets/")

@@ -17,6 +17,6 @@ requests-cache = "^1.2.0"
 poethepoet = "^0.26.1"
 
 [tool.poe.tasks]
-dev = "flet run -d -r src/seeder_flet/main.py"
+dev = "flet run -d -r ./src/seeder_flet/main.py"
 
 
