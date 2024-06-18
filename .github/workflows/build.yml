@@ -1,4 +1,4 @@
-name: Web Build + Deployment to GitHub Pages
+name: Test build for various platforms
 
 on:
     push:
@@ -13,7 +13,7 @@ permissions:
     contents: read
 
 jobs:
-    build:
+    linux:
         runs-on: ubuntu-latest
 
         steps:
