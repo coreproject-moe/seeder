@@ -1,6 +1,6 @@
 import flet as ft
 
-from seeder_flet.lib.views.login import LoginView
+from seeder_flet.lib.views.login import login_view
 
 
 def main(page: ft.Page):
@@ -24,7 +24,14 @@ def main(page: ft.Page):
     def route_change(event: ft.RouteChangeEvent):
         page.views.clear()
         page.views.append(
-            ft.View("/", [LoginView(page)], bgcolor=ft.colors.SECONDARY, padding=0)
+            ft.View(
+                "/",
+                [
+                    login_view(page),
+                ],
+                bgcolor=ft.colors.SECONDARY,
+                padding=0,
+            )
         )
         if event.route == "/home":
             page.views.append(
