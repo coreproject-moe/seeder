@@ -1,6 +1,6 @@
 import flet as ft
 
-from seeder_flet.lib.views.login import login_view
+from lib.views.login import login_view
 
 
 async def main(page: ft.Page):
